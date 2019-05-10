@@ -1,10 +1,11 @@
-import java.io.BufferedInputStream;
+package Utils.WebScrapping;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class testScrappingTBComments {
+public class testScrappingTBComments implements WebHeaders{
     private static final String USER_AGENT_VALUE = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/73.0.3683.86 Chrome/73.0.3683.86 Safari/537.36";
     private static final String ACCEPT_VALUE = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8";
     private static final String ACCEPT_ENCODING_VALUE = "gzip, deflate, br";
@@ -18,7 +19,12 @@ public class testScrappingTBComments {
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
-        con.setRequestProperty("Accept_encoding", ACCEPT_ENCODING_VALUE);
+//        con.setRequestProperty("Accept_encoding", ACCEPT_ENCODING_VALUE);
+//        con.setRequestProperty(ACCEPT_KEY, "*/*");
+//        con.setRequestProperty(COOKIE_KEY, cookies);
+//        con.setRequestProperty(REFER_PAGE_KEY, referPage);
+//        con.setRequestProperty(USER_AGENT_KEY, USER_AGENT_VALUE);
+//        con.setRequestProperty("Accept_encoding", ACCEPT_ENCODING_VALUE);
         con.setRequestProperty("Accept", "*/*");
         con.setRequestProperty("Cookie", cookies);
         con.setRequestProperty("Refer", referPage);

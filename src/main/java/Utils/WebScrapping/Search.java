@@ -15,6 +15,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static Utils.WebScrapping.WebUtils.checkURLValid;
+
 public class Search implements WebHeaders{
     // constant field in searching
     private static final String searchWebsiteAddr = "https://s.taobao.com/search?";
@@ -31,17 +33,17 @@ public class Search implements WebHeaders{
     private ArrayList<String> TBCommoditiesList;
     private Map<String, String> headers;
 
-    public Search (String searchParameter, String sortParameter) throws IOException{
+    public Search (String searchParameter, String sortParameter){
         this.searchParameter = searchParameter;    // the items you going to search
         this.sortParameter = sortParameter;        // the sort parameter in taobao
 
         // add headers to simulate the login request;
         this.headers = new HashMap<String, String>();
-        headers.put("User-Agent", USER_AGENT_VALUE);
-        headers.put("Accept", ACCEPT_VALUE);
-        headers.put("Accept-encoding", ACCEPT_ENCODING_VALUE);
-        headers.put("Refer", referPage);
-        headers.put("Cookie", cookies);
+        headers.put(USER_AGENT_KEY, USER_AGENT_VALUE);
+        headers.put(ACCEPT_KEY, ACCEPT_VALUE);
+        headers.put(ACCEPT_ENCODING_KEY, ACCEPT_ENCODING_VALUE);
+        headers.put(REFER_PAGE_KEY, referPage);
+        headers.put(COOKIE_KEY, cookies);
 
         // final requestUrl;
         this.requestUrl = searchWebsiteAddr +
@@ -78,7 +80,10 @@ public class Search implements WebHeaders{
             temp = m2.group(0);
             if (temp.matches(".*:\"//[id].*")) {
                 temp = formatWebsiteAddr(temp);
-                classifyAddr(temp);
+
+                if (checkURLValid(temp)) {
+                    classifyAddr(temp);
+                }
             }
         }
     }
@@ -93,13 +98,13 @@ public class Search implements WebHeaders{
     private void classifyAddr (String webAddr){
 //        System.out.println(webAddr);
         if (webAddr.matches(".*taobao.*")){
-            TBCommoditiesList.add(webAddr);
+            TBCommoditiesList.add(webAddr.substring(0, webAddr.length() - 7));
         }
         if (webAddr.matches(".*tmall.*")) {
             TMCommoditiesList.add(webAddr);
         }
     }
-    private void initialCommoditiesSiteList () throws IOException {
+    private void initialCommoditiesSiteList () {
         Document doc = null;
         int i = 0;
         while (i < 3) {
@@ -137,6 +142,14 @@ public class Search implements WebHeaders{
             System.out.println("The doc is empty, maybe some error in getting connection or request resource");
             System.exit(2);
         }
+    }
+
+    public ArrayList<String> getTBCommoditiesList() {
+        return TBCommoditiesList;
+    }
+
+    public ArrayList<String> getTMCommoditiesList() {
+        return TMCommoditiesList;
     }
 
     public static void main(String[] args) throws IOException{

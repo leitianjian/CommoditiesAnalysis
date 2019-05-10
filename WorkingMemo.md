@@ -41,3 +41,50 @@ jsonp928({"rateDetail":{"rateCount":{"total":1521,"shop":0,"picNum":464,"used":1
 6.貌似我没怎么用都触发了保护机制（提示登录，滑块验证）似乎要登录之后才会好一些（cookie 的保存与使用）
 7. intialCommitiesList() throw IOException 
 8. 怎么设计多个一类的commodities 之间的关联 class: CommoditiesList???
+https://detail.tmall.com/item.htm?id=586008312266&ns=1&abbucket=9
+https://detail.tmall.com/item.htm?id=573944748256&ns=1&abbucket=9
+https://detail.tmall.com/item.htm?id=582314533121&ns=1&abbucket=9
+https://detail.tmall.com/item.htm?id=560843331855&ns=1&abbucket=9
+https://detail.tmall.com/item.htm?id=544679453832&ns=1&abbucket=9
+https://detail.tmall.com/item.htm?id=574179344674&ns=1&abbucket=9
+https://detail.tmall.com/item.htm?id=574488004449&ns=1&abbucket=9
+https://detail.tmall.com/item.htm?id=534077210610&ns=1&abbucket=9
+https://detail.tmall.com/item.htm?id=577345174755&ns=1&abbucket=9
+https://detail.tmall.com/item.htm?id=584460874161&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=581723516301&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=531884712559&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=553315162553&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=571112673567&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=582123539867&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=576680023290&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=562919631849&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=577165445501&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=575571352148&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=532922146423&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=573011138336&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=570997297777&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=589353709462&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=536253142092&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=547566731936&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=540783236730&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=587839094569&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=580941129117&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=575771859382&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=585082489706&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=527400997626&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=524828781468&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=588847654283&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=40107985899&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=570222113456&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=526048701127&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=520264445472&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=566327513822&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=526973604640&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=572670398663&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=588744173770&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=552077775667&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=571128355989&ns=1&abbucket=9
+https://item.taobao.com/item.htm?id=570907340813&ns=1&abbucket=9
+
+rate useful field: "date", "useful" (认为有用的人数), 
+"content", "appendCanExplainable", "appendList", "append" = null

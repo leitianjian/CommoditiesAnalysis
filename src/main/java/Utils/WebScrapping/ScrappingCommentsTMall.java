@@ -4,6 +4,7 @@ import model.ItemBean;
 import model.RateBean;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class ScrappingCommentsTMall implements ScrappingComments{
@@ -18,8 +19,8 @@ public class ScrappingCommentsTMall implements ScrappingComments{
     }
 
     /**
-     * @param searchParameter the keyword you want to search
-     * @param sortParameter   the sort method you want to list the value
+     *  searchParameter the keyword you want to search
+     *  sortParameter   the sort method you want to list the value
      * */
     public ScrappingCommentsTMall() throws IOException{
 
@@ -30,8 +31,8 @@ public class ScrappingCommentsTMall implements ScrappingComments{
         return 1;
     }
 
-    public RateBean[] getRate() {
-        return new RateBean[0];
+    public ArrayList<RateBean> getRate() {
+        return null;
     }
 
     public ItemBean getResult() {

@@ -6,16 +6,15 @@ import Utils.WebScrapping.ScrappingCommentsTMall;
 import static Utils.WebScrapping.CommentScrapping.getCookies;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-enum WebType {
-    taobao,  tmall
-}
+
 
 public class ItemBean {
     private String id;
     private WebType type;
     private String url;
-    private RateBean[] comments;
+    private ArrayList<RateBean> comments;
 
     public ItemBean (String url, String id, WebType type) {
         this.url = url;
@@ -28,9 +27,22 @@ public class ItemBean {
                 break;
             case tmall:
                 ScrappingCommentsTMall s2 = new ScrappingCommentsTMall(url, getCookies());
-                this.comments = s2.getRate();
+//                this.comments = s2.getRate();
                 break;
         }
+    }
+
+    public ArrayList<RateBean> getComments() {
+        return comments;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public String toString(){
+        return url + "\n" + id + " " + type + comments + "\n";
     }
 
     public void setCommentsType (){

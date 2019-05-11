@@ -3,8 +3,9 @@ package Utils.WebScrapping;
 import model.ItemBean;
 import model.RateBean;
 
-public interface ScrappingComments {
+import java.util.ArrayList;
 
-    public RateBean[] getRate();
+public interface ScrappingComments {
+    public ArrayList<RateBean> getRate();
     public ItemBean getResult();
 }

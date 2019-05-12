@@ -1,14 +1,10 @@
 package model;
 
-import Utils.WebScrapping.CommentScrapping;
 import Utils.WebScrapping.ScrappingCommentsTB;
 import Utils.WebScrapping.ScrappingCommentsTMall;
 import static Utils.WebScrapping.CommentScrapping.getCookies;
 
-import java.io.IOException;
 import java.util.ArrayList;
-
-
 
 public class ItemBean {
     private String id;

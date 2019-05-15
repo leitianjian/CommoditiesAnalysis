@@ -1,4 +1,4 @@
-import Utils.WebScrapping.ScrappingCommentsTB;
+import com.group.commditiesAnalysis.Utils.WebScrapping.ScrappingCommentsTB;
 import com.google.gson.Gson;
 
 import java.io.*;

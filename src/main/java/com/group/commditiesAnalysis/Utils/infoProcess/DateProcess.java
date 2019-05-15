@@ -1,4 +1,4 @@
-package Utils.infoProcess;
+package com.group.commditiesAnalysis.Utils.infoProcess;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

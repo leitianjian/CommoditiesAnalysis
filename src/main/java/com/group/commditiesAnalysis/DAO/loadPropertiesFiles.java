@@ -1,4 +1,4 @@
-package com.ltj.commditiesAnalysis.DAO;
+package com.group.commditiesAnalysis.DAO;
 
 public class loadPropertiesFiles {
     public static String loadCookie (String targetFile){

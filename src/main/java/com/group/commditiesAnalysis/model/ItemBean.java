@@ -1,8 +1,8 @@
-package com.ltj.commditiesAnalysis.model;
+package com.group.commditiesAnalysis.model;
 
-import Utils.WebScrapping.ScrappingCommentsTB;
-import Utils.WebScrapping.ScrappingCommentsTMall;
-import static Utils.WebScrapping.CommentScrapping.getCookies;
+import com.group.commditiesAnalysis.Utils.WebScrapping.ScrappingCommentsTB;
+import com.group.commditiesAnalysis.Utils.WebScrapping.ScrappingCommentsTMall;
+import static com.group.commditiesAnalysis.Utils.WebScrapping.CommentScrapping.getCookies;
 
 import java.util.ArrayList;
 

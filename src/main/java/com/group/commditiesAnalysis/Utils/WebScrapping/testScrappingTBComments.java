@@ -1,4 +1,4 @@
-package Utils.WebScrapping;
+package com.group.commditiesAnalysis.Utils.WebScrapping;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

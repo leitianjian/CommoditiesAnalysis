@@ -1,9 +1,9 @@
-package Utils.WebScrapping;
+package com.group.commditiesAnalysis.Utils.WebScrapping;
 
 import com.google.gson.Gson;
-import com.ltj.commditiesAnalysis.model.ItemBean;
-import com.ltj.commditiesAnalysis.model.RateBean;
-import com.ltj.commditiesAnalysis.model.WebType;
+import com.group.commditiesAnalysis.model.ItemBean;
+import com.group.commditiesAnalysis.model.RateBean;
+import com.group.commditiesAnalysis.model.WebType;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,8 +18,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static Utils.WebScrapping.WebUtils.checkURLValid;
-import static Utils.infoProcess.DateProcess.getDate;
+import static com.group.commditiesAnalysis.Utils.WebScrapping.WebUtils.checkURLValid;
+import static com.group.commditiesAnalysis.Utils.infoProcess.DateProcess.getDate;
 
 public class ScrappingCommentsTB implements ScrappingComments, WebHeaders {
     private final String URL_HOST = "https://rate.taobao.com/feedRateList.htm?";

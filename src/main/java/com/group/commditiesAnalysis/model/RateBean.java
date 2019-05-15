@@ -1,4 +1,4 @@
-package com.ltj.commditiesAnalysis.model;
+package com.group.commditiesAnalysis.model;
 
 import java.util.ArrayList;
 import java.util.Date;

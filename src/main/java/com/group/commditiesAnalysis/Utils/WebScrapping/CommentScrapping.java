@@ -1,7 +1,7 @@
-package Utils.WebScrapping;
+package com.group.commditiesAnalysis.Utils.WebScrapping;
 
 
-import com.ltj.commditiesAnalysis.model.ItemBean;
+import com.group.commditiesAnalysis.model.ItemBean;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

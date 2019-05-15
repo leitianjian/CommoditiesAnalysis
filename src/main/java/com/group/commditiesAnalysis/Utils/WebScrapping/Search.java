@@ -1,4 +1,4 @@
-package Utils.WebScrapping;
+package com.group.commditiesAnalysis.Utils.WebScrapping;
 
 import org.apache.commons.text.StringEscapeUtils;
 import org.jsoup.Connection;
@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static Utils.WebScrapping.WebUtils.checkURLValid;
+import static com.group.commditiesAnalysis.Utils.WebScrapping.WebUtils.checkURLValid;
 
 public class Search implements WebHeaders{
     // constant field in searching

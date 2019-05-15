@@ -1,4 +1,4 @@
-package Utils.WebScrapping;
+package com.group.commditiesAnalysis.Utils.WebScrapping;
 
 public interface WebHeaders {
     final String USER_AGENT_KEY = "User-Agent";

@@ -1,4 +1,4 @@
-package Utils.WebScrapping;
+package com.group.commditiesAnalysis.Utils.WebScrapping;
 
 import org.apache.commons.validator.routines.UrlValidator;
 

@@ -22,7 +22,7 @@ public class CommentScrapping {
     public CommentScrapping (String searchItem, String sortParam){
         this.searchItem = searchItem;
         this.sortParam = sortParam;
-        Search search = new Search(searchItem, sortParam);
+        Search search = new Search(searchItem, sortParam, cookies);
         this.TBAddrList = search.getTBCommoditiesList();
         this.TMAddrList = search.getTMCommoditiesList();
         this.result = new ArrayList<>();
@@ -36,14 +36,14 @@ public class CommentScrapping {
             }
         }
 
-        for (String addr : TMAddrList){
-            ItemBean resultItem = new ScrappingCommentsTMall(addr, cookies).getResult();
-            if (resultItem != null) {
-                result.add(resultItem);
-            } else {
-                System.out.println("The result item is null");
-            }
-        }
+//        for (String addr : TMAddrList){
+//            ItemBean resultItem = new ScrappingCommentsTMall(addr, cookies).getResult();
+//            if (resultItem != null) {
+//                result.add(resultItem);
+//            } else {
+//                System.out.println("The result item is null");
+//            }
+//        }
     }
 
     public static void main(String[] args) throws IOException {

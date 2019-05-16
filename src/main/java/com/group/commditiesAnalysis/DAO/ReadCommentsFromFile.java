@@ -11,9 +11,11 @@ public class ReadCommentsFromFile {
     private ArrayList<String> comments;
     private String id;
     private static final String HEAD = "itemID=";
+
     public ReadCommentsFromFile (String id){
         this.id = id;
         this.comments = new ArrayList<>();
+        readFile();
     }
 
     private void readFile (){
@@ -25,7 +27,7 @@ public class ReadCommentsFromFile {
             while ((temp = br.readLine()) != null){
                 if (temp.matches(".*rateContent.*")){
                     String rate = temp.split("rateContent")[2];
-//                    rate.
+                    comments.add(rate);
                 }
             }
 

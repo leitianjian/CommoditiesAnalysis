@@ -5,7 +5,7 @@
 	<UserDict>on</UserDict>
 	<UserDictPrior>On</UserDictPrior>
 	<FieldDict>on</FieldDict>  
-	<GranularityContorl>on</GranularityContorl>
+	<GranularityContorl>off</GranularityContorl>
 	<Log>On</Log>
 	<version>2013</version>
 	<Modify>2012-11-14</Modify>

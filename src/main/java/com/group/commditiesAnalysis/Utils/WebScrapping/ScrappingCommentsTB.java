@@ -19,6 +19,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.group.commditiesAnalysis.Utils.WebScrapping.WebUtils.checkURLValid;
+import static com.group.commditiesAnalysis.Utils.WebScrapping.WebUtils.getItemId;
 import static com.group.commditiesAnalysis.Utils.infoProcess.DateProcess.getDate;
 
 public class ScrappingCommentsTB implements ScrappingComments, WebHeaders {
@@ -43,8 +44,7 @@ public class ScrappingCommentsTB implements ScrappingComments, WebHeaders {
         this.targetCommodityUrl = url;
         this.cookie = cookie;
         // get the items id
-        Matcher m = Pattern.compile("[0-9]{7,13}").matcher(targetCommodityUrl);
-        this.itemID = (m.find()) ? m.group(0) : null;
+        this.itemID = getItemId(targetCommodityUrl);
         // set refer page as the detail page
         this.referPageValue = url;
         rateBeans = new ArrayList<>();

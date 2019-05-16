@@ -10,7 +10,7 @@ public class WordAnalyzer {
 
     public WordAnalyzer (String itemID){
         this.itemID = itemID;
-        this.comments = new ReadCommentsFromFile(itemID).getComments();
+//        this.comments = new ReadCommentsFromFile(itemID).getComments();
     }
 
 //    public

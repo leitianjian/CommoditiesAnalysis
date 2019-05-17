@@ -47,6 +47,8 @@ public class CommentsAnalyzer {
 //        NLPIR.importUserDict("/home/ltj/Downloads/JAVA2Project/lib/UserDic/professions.txt");
 //        NLPIR.importUserDict("/home/ltj/Downloads/JAVA2Project/lib/UserDic/THUOCL_caijing.txt");
         NLPIR.importUserDict("/home/ltj/Downloads/JAVA2Project/lib/UserDic/THUOCL_it.txt");
+        NLPIR.addUserWord("性价比 n");
+        NLPIR.addUserWord("点亮 v");
 
         Pattern pattern = Pattern.compile(".+?/[a-z0-9]+?/[0-9]+?#");
         StringBuilder sb = new StringBuilder();
@@ -102,7 +104,10 @@ public class CommentsAnalyzer {
         try (PrintWriter out = new PrintWriter("temp")){
             result.entrySet()
                     .stream()
-//                    .filter(k -> k.getKey().getType().equals("n"))
+                    .filter(k -> {
+                        String type = k.getKey().getType();
+                        return type.matches("n.*") | type.matches("[0-9]+");
+                    })
                                 .sorted(Comparator.comparing(Map.Entry::getValue)).forEach(out::println);
 
 //            result.forEach((k, v) -> out.println(k + " Count: " + v));

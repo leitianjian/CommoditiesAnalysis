@@ -1,31 +1,28 @@
 package com.group.commditiesAnalysis.DAO;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 public class ReadCommentsFromFile {
     private ArrayList<String> comments;
-    private String id;
-    private static final String HEAD = "itemID=";
-    public ReadCommentsFromFile (String id){
-        this.id = id;
+    private File file;
+
+    public ReadCommentsFromFile (File file){
+        this.file = file;
         this.comments = new ArrayList<>();
+        readFile();
     }
 
     private void readFile (){
-        String fileName = HEAD + id;
         try {
-            FileInputStream fis = new FileInputStream(fileName);
+            FileInputStream fis = new FileInputStream(file);
             BufferedReader br = new BufferedReader(new InputStreamReader(fis, Charset.forName("utf-8")));
             String temp;
             while ((temp = br.readLine()) != null){
                 if (temp.matches(".*rateContent.*")){
-                    String rate = temp.split("rateContent")[2];
-//                    rate.
+                    String rate = temp.split("rateContent")[1];
+                    comments.add(rate);
                 }
             }
 

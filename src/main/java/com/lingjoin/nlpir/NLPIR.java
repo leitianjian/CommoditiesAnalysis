@@ -133,7 +133,7 @@ public class NLPIR {
 		if(!InitState){
 			return 0;
 		}
-		return CNLPIRLibrary.Instance.NLPIR_ImportUserDict(fileDict,true);
+		return CNLPIRLibrary.Instance.NLPIR_ImportUserDict(fileDict,false);
 	}
 	
 	public static int NLPIR_ImportKeyBlackList(String sFilename){

@@ -24,7 +24,7 @@ public class CommentScrapping {
         this.sortParam = sortParam;
         Search search = new Search(searchItem, sortParam, cookies);
         this.TBAddrList = search.getTBCommoditiesList();
-        this.TMAddrList = search.getTMCommoditiesList();
+//        this.TMAddrList = search.getTMCommoditiesList();
         this.result = new ArrayList<>();
 
         for (String addr : TBAddrList){

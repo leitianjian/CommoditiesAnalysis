@@ -60,6 +60,9 @@ public class Search implements WebHeaders{
      * @param htmlContent the search result page
      * */
     private void getCommoditiesAddr (String htmlContent){
+//        System.out.println(htmlContent);
+
+
         String regString1 = "g_page_config = \\{.*;";
         Pattern p = Pattern.compile(regString1);
         String regString2 = "\"detail_url\":\".*?\"";

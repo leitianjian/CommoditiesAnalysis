@@ -82,10 +82,13 @@ public class testJson {
 
     public static void main(String[] args) throws IOException {
 //        writeToFile();
-        String targetJson = readFile();
-        targetJson = targetJson.substring(1, targetJson.length() - 1);
+//        String targetJson = readFile();
+//        targetJson = targetJson.substring(1, targetJson.length() - 1);
         Gson g = new Gson();
-        System.out.println(targetJson);
-        processJsonDataTB(targetJson);
+        String t = "{\"rate\":true}";
+        Map m = g.fromJson(t, Map.class);
+        System.out.println(m.get("rate").getClass());
+//        System.out.println(targetJson);
+//        processJsonDataTB(targetJson);
     }
 }

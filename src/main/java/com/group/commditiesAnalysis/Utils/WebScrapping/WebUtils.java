@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 public class WebUtils {
     public static boolean checkURLValid (String url){
+//        System.out.println(url);
         UrlValidator validator = new UrlValidator();
         return validator.isValid(url);
     }

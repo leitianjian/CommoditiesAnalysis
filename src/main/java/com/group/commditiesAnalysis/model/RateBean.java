@@ -1,14 +1,15 @@
 package com.group.commditiesAnalysis.model;
 
-import java.util.ArrayList;
+import com.google.gson.Gson;
+
 import java.util.Date;
 
 public class RateBean {
     private String rateContent;
-    private ArrayList<String> appendComment;
+    private String appendComment;
     private Date uploadDate;
 
-    public RateBean (String rateContent, ArrayList<String> appendComment, Date uploadDate){
+    public RateBean (String rateContent, String appendComment, Date uploadDate){
         this.rateContent = rateContent;
         this.appendComment = appendComment;
         this.uploadDate = uploadDate;
@@ -18,7 +19,7 @@ public class RateBean {
         return uploadDate;
     }
 
-    public ArrayList<String> getAppendComment() {
+    public String getAppendComment() {
         return appendComment;
     }
 
@@ -28,6 +29,6 @@ public class RateBean {
 
     @Override
     public String toString(){
-        return "date" + "=" + uploadDate + "rateContent" + rateContent + ", " + appendComment + "\n";
+        return new Gson().toJson(this);
     }
 }

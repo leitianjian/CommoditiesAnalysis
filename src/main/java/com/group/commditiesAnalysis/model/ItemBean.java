@@ -1,10 +1,10 @@
 package com.group.commditiesAnalysis.model;
 
-import com.group.commditiesAnalysis.Utils.WebScrapping.ScrappingCommentsTB;
-import com.group.commditiesAnalysis.Utils.WebScrapping.ScrappingCommentsTMall;
-import static com.group.commditiesAnalysis.Utils.WebScrapping.CommentScrapping.getCookies;
+import com.google.gson.Gson;
+import com.group.commditiesAnalysis.Utils.infoProcess.DateProcess;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ItemBean {
     private String id;
@@ -12,20 +12,11 @@ public class ItemBean {
     private String url;
     private ArrayList<RateBean> comments;
 
-    public ItemBean (String url, String id, WebType type) {
+    public ItemBean (String url, String id, WebType type, ArrayList<RateBean> comments) {
         this.url = url;
         this.id = id;
         this.type = type;
-        switch (type){
-            case taobao:
-                ScrappingCommentsTB s1 = new ScrappingCommentsTB(url, getCookies());
-                this.comments = s1.getRate();
-                break;
-            case tmall:
-                ScrappingCommentsTMall s2 = new ScrappingCommentsTMall(url, getCookies());
-//                this.comments = s2.getRate();
-                break;
-        }
+        this.comments = comments;
     }
 
     public ArrayList<RateBean> getComments() {
@@ -38,10 +29,18 @@ public class ItemBean {
 
     @Override
     public String toString(){
-        return url + "\n" + id + " " + type + comments + "\n";
+        return new Gson().toJson(this);
     }
 
-    public void setCommentsType (){
+    public static void main(String[] args) {
+        ArrayList<RateBean> comments = new ArrayList<>();
+        comments.add(new RateBean("hhhh", "hhhhh", DateProcess.getDate("1971-05-31", "yyyy-MM-dd")));
+        comments.add(new RateBean("llll", "lllll", DateProcess.getDate("1902-12-01", "yyyy-MM-dd")));
+        System.out.println(new Gson().toJson(comments));
+        System.out.println(comments.get(0));
+    }
 
+    public WebType getType() {
+        return type;
     }
 }

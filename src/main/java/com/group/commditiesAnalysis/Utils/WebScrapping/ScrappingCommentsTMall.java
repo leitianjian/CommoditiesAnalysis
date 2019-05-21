@@ -37,7 +37,7 @@ public class ScrappingCommentsTMall implements ScrappingComments, WebHeaders{
 
     private ArrayList<RateBean> rateBeans;
 
-    public ScrappingCommentsTMall (String url, String cookie){
+    public ScrappingCommentsTMall (String url, String cookie) throws InterruptedException{
         this.targetCommodityUrl = url;
         this.cookie = cookie;
         this.itemID = getItemId(targetCommodityUrl);
@@ -180,7 +180,7 @@ public class ScrappingCommentsTMall implements ScrappingComments, WebHeaders{
         return null;
     }
 
-    private void scrappingAllComments (){
+    private void scrappingAllComments () throws InterruptedException{
         int currentPage = 1;
         String rateUrl, rateJson;
         do {
@@ -189,16 +189,16 @@ public class ScrappingCommentsTMall implements ScrappingComments, WebHeaders{
                     + CURRENT_PAGE_KEY + "=" + currentPage;
             rateJson = getRateJson(rateUrl);
             ++ currentPage;
-            try {
-                Thread.sleep((int) (3000 * Math.random() + 1000));
-            } catch (InterruptedException e){
-                e.printStackTrace();
-            }
+//            try {
+                Thread.sleep((int) (2000 * Math.random() + 1000));
+//            } catch (InterruptedException e){
+//                e.printStackTrace();
+//            }
         } while (processJsonDataTMall(rateJson));
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String targetURL =
                 "https://detail.tmall.com/item.htm?id=586008312266&ns=1&abbucket=9";
         String cookie =

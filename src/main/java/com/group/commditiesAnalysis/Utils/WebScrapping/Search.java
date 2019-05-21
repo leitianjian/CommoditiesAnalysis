@@ -133,13 +133,13 @@ public class Search implements WebHeaders{
 
         if (doc != null){
             getCommoditiesAddr(doc.toString());
-            for (String x : TMCommoditiesList){
-                System.out.println(x);
-            }
-
-            for (String x : TBCommoditiesList){
-                System.out.println(x);
-            }
+//            for (String x : TMCommoditiesList){
+//                System.out.println(x);
+//            }
+//
+//            for (String x : TBCommoditiesList){
+//                System.out.println(x);
+//            }
 
         } else {
             System.out.println("The doc is empty, maybe some error in getting connection or request resource");

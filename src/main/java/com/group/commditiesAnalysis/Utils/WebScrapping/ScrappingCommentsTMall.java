@@ -190,7 +190,7 @@ public class ScrappingCommentsTMall implements ScrappingComments, WebHeaders{
             rateJson = getRateJson(rateUrl);
             ++ currentPage;
 //            try {
-                Thread.sleep((int) (2000 * Math.random() + 1000));
+                Thread.sleep((int) (2000 * Math.random() + 2000));
 //            } catch (InterruptedException e){
 //                e.printStackTrace();
 //            }

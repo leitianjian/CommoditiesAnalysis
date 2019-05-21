@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class WebScrappingLayoutController {
 //    CheckBoxTr
@@ -47,9 +49,11 @@ public class WebScrappingLayoutController {
     private ArrayList<CheckBoxTreeItem<String>> targetAddrTB;
     private ArrayList<CheckBoxTreeItem<String>> targetAddrTM;
 
+//    private Integer[] timePeriod;
+
     private MainApp mainApp;
 
-    private Task<Void> scrappingTargetAddrTask;
+//    private Task<Void> scrappingTargetAddrTask;
 
     @FXML
     private void initialize (){
@@ -69,7 +73,7 @@ public class WebScrappingLayoutController {
                 appendText(String.valueOf((char) b));
             }
         }, true);
-//        System.setOut(out);
+        System.setOut(out);
 
         // root
         CheckBoxTreeItem<String> root = new CheckBoxTreeItem<>();
@@ -82,6 +86,8 @@ public class WebScrappingLayoutController {
         resultView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         resultView.setRoot(root);
         resultView.setShowRoot(false);
+
+
 
 //        scrappingTargetAddrTask = new Task<Void>() {
 //            @Override
@@ -201,7 +207,8 @@ public class WebScrappingLayoutController {
     private void handleScrapping (){
         scrappingButton.setDisable(true);
 
-        Thread th = new Thread (new Runnable(){
+        Timer timer = new Timer("task", true);
+        timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 ArrayList<String> listTB = new ArrayList<>();
@@ -227,17 +234,21 @@ public class WebScrappingLayoutController {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                            scrappingButton.setDisable(false);
+                        scrappingButton.setDisable(false);
                     }
                 });
             }
-        });
-        th.setDaemon(true);
-        th.start();
+        } , 1000, 1000 * 60 * 60 * 24);
+
     }
 
     public void setMainApp (MainApp mainApp){
         this.mainApp = mainApp;
+    }
+
+    @FXML
+    private void handlePeriod (){
+
     }
 
     @FXML

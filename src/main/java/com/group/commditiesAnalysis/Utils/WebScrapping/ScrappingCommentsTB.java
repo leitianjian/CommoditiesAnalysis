@@ -58,7 +58,7 @@ public class ScrappingCommentsTB implements ScrappingComments, WebHeaders {
     private boolean processJsonDataTB (String data){
         if (data != null){
             Gson gson = new Gson();
-//            System.out.println(data);
+            System.out.println(data);
             Map JsonMap = gson.fromJson(data, HashMap.class);
             int maxPage = ((Double) JsonMap.get("maxPage")).intValue();
             int currentPage = ((Double) JsonMap.get("currentPageNum")).intValue();
@@ -144,7 +144,7 @@ public class ScrappingCommentsTB implements ScrappingComments, WebHeaders {
             rateJson = getRateJson(rateUrl);
             ++ currentPage;
 //            try {
-                Thread.sleep((int) (2000 * Math.random() + 1000));
+                Thread.sleep((int) (2000 * Math.random() + 2000));
 //            } catch (InterruptedException e){
 //                e.printStackTrace();
 //            }

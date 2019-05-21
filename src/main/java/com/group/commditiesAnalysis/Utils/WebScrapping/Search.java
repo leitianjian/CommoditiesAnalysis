@@ -132,6 +132,7 @@ public class Search implements WebHeaders{
 //        System.out.println("----------------------------------------------------");
 
         if (doc != null){
+//            System.out.println(doc.toString());
             getCommoditiesAddr(doc.toString());
 //            for (String x : TMCommoditiesList){
 //                System.out.println(x);
